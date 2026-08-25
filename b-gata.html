@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>就労継続支援B型 アネラカフェ大分｜株式会社かねちん</title>
+<meta name="description" content="アネラカフェ大分は、保護犬猫ふれあいカフェを併設した就労継続支援B型事業所です。接客・調理・動物のお世話など、その方に合った働き方を一緒に見つけます。見学・体験を受け付けています。">
+
+<link rel="icon" href="./favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+
+<style>
+.phead{background:linear-gradient(160deg,var(--sea),var(--sea-deep));color:#fff;padding:150px 0 70px}
+.phead__ttl{font-family:var(--mincho);font-size:clamp(26px,5.6vw,40px);letter-spacing:.08em;line-height:1.5}
+.phead__sub{margin-top:14px;color:rgba(255,255,255,.78);font-size:14.5px;letter-spacing:.06em}
+.flow{counter-reset:step;display:grid;gap:0;border-top:1px solid var(--line)}
+.flow__item{border-bottom:1px solid var(--line);padding:22px 0 22px 54px;position:relative}
+.flow__item::before{
+  counter-increment:step;content:counter(step);
+  position:absolute;left:0;top:22px;width:34px;height:34px;border-radius:50%;
+  background:var(--sea);color:#fff;display:flex;align-items:center;justify-content:center;
+  font-family:var(--mincho);font-size:15px;
+}
+.flow__ttl{font-family:var(--mincho);font-size:18px;letter-spacing:.04em;margin-bottom:4px}
+.flow__txt{font-size:14.5px;color:var(--gray)}
+.work{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.work__cell{background:var(--sand);padding:24px}
+.work__ttl{font-family:var(--mincho);font-size:17px;margin-bottom:8px;letter-spacing:.03em}
+.work__txt{font-size:14px;color:var(--gray);line-height:1.85}
+@media(min-width:720px){.work{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.work{grid-template-columns:repeat(4,1fr)}}
+</style>
+</head>
+<body>
+
+<header class="hdr hdr--sub" id="hdr">
+  <a href="./index.html" class="hdr__logo">
+    <span class="hdr__logotext">株式会社かねちん</span>
+    <!-- ロゴ画像が用意できたら上の行を消して下の2行を有効にしてください
+    <img class="lg--light" src="./logo-white.svg" alt="株式会社かねちん">
+    <img class="lg--dark" src="./logo.svg" alt="株式会社かねちん"> -->
+  </a>
+  <nav class="hdr__nav">
+    <a href="./index.html#business">事業紹介</a>
+    <a href="./jisseki.html">実績</a>
+    <a href="./b-gata.html">就労継続支援B型</a>
+    <a href="./index.html#media">メディア・活動</a>
+    <a href="./index.html#company">会社情報</a>
+  </nav>
+  <button class="hdr__burger" id="burger" aria-label="メニューを開く" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="hdr__cta" href="#contact">お問い合わせ</a>
+</header>
+
+<section class="phead">
+  <div class="wrap">
+    <h1 class="phead__ttl">就労継続支援B型<br>アネラカフェ大分</h1>
+    <p class="phead__sub">保護犬猫ふれあいカフェを併設した事業所です。</p>
+  </div>
+</section>
+
+<!-- ============ 概要 ============ -->
+<section class="sec">
+  <div class="wrap reveal">
+    <p class="eyebrow">ABOUT</p>
+    <h2 class="h2">犬と猫がいる場所で、<br>働くことを試せます。</h2>
+    <p class="lead">
+      アネラカフェ大分は、保護された犬や猫とふれあえるカフェを、障がいのある方と一緒に運営している就労継続支援B型事業所です。
+      接客、調理、店内業務、動物のお世話。仕事の種類が多いので、その方に合う役割が見つけやすい場所だと考えています。
+    </p>
+    <p class="lead" style="margin-top:1.2em">
+      「人と話すのは苦手だけれど、動物のお世話ならできる」。そういう入り方でも構いません。
+      できることから始めて、少しずつ幅を広げていけるようにしています。
+    </p>
+    <div class="gallery gallery--wide" style="margin-top:36px">
+      <figure>
+        <img src="./img/anella-tennai.jpg" alt="アネラカフェ大分の店内" loading="lazy">
+        <figcaption>店内のようす</figcaption>
+      </figure>
+      <figure>
+        <img src="./img/biz-anella.jpg" alt="カフェでくつろぐ保護犬" loading="lazy">
+        <figcaption>在籍している保護犬</figcaption>
+      </figure>
+      <figure>
+        <img src="./img/media-anella-tv.jpg" alt="テレビで紹介された様子" loading="lazy">
+        <figcaption>テレビで紹介されました</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 仕事の内容 ============ -->
+<section class="sec sec--tight">
+  <div class="wrap reveal">
+    <p class="eyebrow">WORK</p>
+    <h2 class="h2">どんな仕事がありますか</h2>
+    <div class="work">
+      <div class="work__cell">
+        <div class="work__ttl">接客</div>
+        <p class="work__txt">ご来店されたお客様のご案内、注文の受付、店内のご説明など。</p>
+      </div>
+      <div class="work__cell">
+        <div class="work__ttl">調理・ドリンク</div>
+        <p class="work__txt">カフェメニューの準備、ドリンクの提供、洗い物など。</p>
+      </div>
+      <div class="work__cell">
+        <div class="work__ttl">動物のお世話</div>
+        <p class="work__txt">保護犬猫の食事、清掃、遊び相手。人と話すのが苦手な方の入口になることが多い仕事です。</p>
+      </div>
+      <div class="work__cell">
+        <div class="work__ttl">店内業務</div>
+        <p class="work__txt">清掃、備品の補充、簡単な事務作業など。<span style="color:var(--sea)">【要記入：実際の作業内容に合わせて修正してください】</span></p>
+      </div>
+    </div>
+    <p class="note">
+      ※ その日の体調やペースに合わせて、担当する仕事を相談しながら決めています。
+    </p>
+  </div>
+</section>
+
+<!-- ============ 利用のご案内 ============ -->
+<section class="sec sec--dark">
+  <div class="wrap reveal">
+    <p class="eyebrow">INFORMATION</p>
+    <h2 class="h2">利用のご案内</h2>
+    <table class="table" style="color:#fff">
+      <tr><th style="color:rgba(255,255,255,.65)">事業所名</th><td>アネラカフェ大分</td></tr>
+      <tr><th style="color:rgba(255,255,255,.65)">サービス種別</th><td>就労継続支援B型</td></tr>
+      <tr><th style="color:rgba(255,255,255,.65)">事業所番号</th><td>【要記入】</td></tr>
+      <tr><th style="color:rgba(255,255,255,.65)">所在地</th><td>【要記入：大分県大分市◯◯】</td></tr>
+      <tr><th style="color:rgba(255,255,255,.65)">営業時間</th><td>平日 12:00–18:00　／　土日祝 11:00–18:00<br><span style="color:rgba(255,255,255,.6);font-size:13px">【要記入：定休日、および利用者の方の活動時間帯】</span></td></tr>
+      <tr><th style="color:rgba(255,255,255,.65)">対象となる方</th><td>【要記入：対象となる障害種別、受給者証の有無、年齢などの条件】</td></tr>
+      <tr><th style="color:rgba(255,255,255,.65)">定員</th><td>【要記入】</td></tr>
+      <tr><th style="color:rgba(255,255,255,.65)">工賃</th><td>【要記入：時間額または月額の平均。ご本人・ご家族が最も気にされる項目です】</td></tr>
+      <tr><th style="color:rgba(255,255,255,.65)">送迎</th><td>【要記入：有無と対応エリア】</td></tr>
+      <tr><th style="color:rgba(255,255,255,.65)">食事</th><td>【要記入：昼食の提供の有無】</td></tr>
+      <tr><th style="color:rgba(255,255,255,.65)">運営法人</th><td>株式会社かねちん</td></tr>
+      <tr><th style="color:rgba(255,255,255,.65)">動物取扱業</th><td>【要記入：第一種動物取扱業 登録番号・登録年月日・有効期間・動物取扱責任者】</td></tr>
+    </table>
+    <p class="note">※ 上記は相談支援専門員・ご家族が必ず確認される項目です。空欄のまま公開しないでください。</p>
+  </div>
+</section>
+
+<!-- ============ 見学から利用開始まで ============ -->
+<section class="sec">
+  <div class="wrap reveal">
+    <p class="eyebrow">FLOW</p>
+    <h2 class="h2">見学から利用開始まで</h2>
+    <div class="flow">
+      <div class="flow__item">
+        <div class="flow__ttl">お問い合わせ</div>
+        <p class="flow__txt">お電話またはフォームからご連絡ください。ご本人からでも、ご家族・相談支援専門員の方からでも構いません。</p>
+      </div>
+      <div class="flow__item">
+        <div class="flow__ttl">見学</div>
+        <p class="flow__txt">実際の様子をご覧いただきます。犬猫がいる環境なので、まずは雰囲気を見ていただくのが一番早いです。</p>
+      </div>
+      <div class="flow__item">
+        <div class="flow__ttl">体験利用</div>
+        <p class="flow__txt">何日か実際に過ごしてみて、合うかどうかを確かめていただきます。<span style="color:var(--sea)">【要記入：体験の日数・費用】</span></p>
+      </div>
+      <div class="flow__item">
+        <div class="flow__ttl">受給者証の申請</div>
+        <p class="flow__txt">お住まいの市町村の窓口で手続きをします。手順がわからない場合はこちらでご説明します。</p>
+      </div>
+      <div class="flow__item">
+        <div class="flow__ttl">契約・利用開始</div>
+        <p class="flow__txt">個別支援計画を一緒に作り、通所を始めます。通う日数やペースは相談しながら決めます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ お問い合わせ ============ -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2 class="cta__title">まずは見学から、どうぞ。</h2>
+    <p class="cta__text">
+      ご本人・ご家族・相談支援専門員の方、どなたからのご連絡でも構いません。<br>「まだ迷っている」段階のご相談も歓迎します。
+    </p>
+    <a class="btn" href="./index.html#contact">お問い合わせフォームへ</a>
+    <p class="cta__sub">お電話：<a href="tel:0000000000">【要記入：事業所の電話番号】</a></p>
+  </div>
+</section>
+
+<footer class="ftr">
+  <div class="wrap ftr__inner">
+    <div>
+      <!-- ロゴ画像：<img class="ftr__logo" src="./logo-white.svg" alt="株式会社かねちん"> -->
+      © <span id="yr"></span> 株式会社かねちん
+    </div>
+    <div class="ftr__links">
+      <a href="./index.html">ホーム</a>
+      <a href="./index.html#company">会社情報</a>
+      <a href="./privacy.html">プライバシーポリシー</a>
+      <a href="./tokushoho.html">特定商取引法に基づく表記</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+const hdr = document.getElementById('hdr');
+// モバイルメニュー
+const burger = document.getElementById('burger');
+if (burger) {
+  const toggle = (open) => {
+    hdr.classList.toggle('is-open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+  burger.addEventListener('click', () => toggle(!hdr.classList.contains('is-open')));
+  hdr.querySelectorAll('.hdr__nav a').forEach(a => a.addEventListener('click', () => toggle(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') toggle(false); });
+}
+
+const io = new IntersectionObserver((es) => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+}, {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+/* ===========================================================
+   株式会社かねちん コーポレートサイト 共通スタイル
+   テーマ：宮崎の南国感（日向灘のターコイズ／夕陽／ハイビスカス）
+   =========================================================== */
+:root{
+  --sea-deep:#063C4B;    /* 日向灘の深いところ */
+  --sea:#0E8798;         /* 海 */
+  --sea-bright:#35B6C0;  /* 浅瀬 */
+  --sun:#F6B23C;         /* 陽 */
+  --hibiscus:#E8563F;    /* ハイビスカス */
+  --palm:#1C6B57;        /* 椰子 */
+  --sand:#FDF9F2;        /* 白砂 */
+  --sumi:#1E2B2C;
+  --gray:#65787A;
+  --line:rgba(30,43,44,.14);
+
+  --mincho:"Shippori Mincho B1","Hiragino Mincho ProN",serif;
+  --gothic:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",sans-serif;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--gothic);color:var(--sumi);background:var(--sand);
+  line-height:1.9;font-size:16px;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{width:min(1080px,90vw);margin:0 auto;position:relative}
+
+/* ---------- ヘッダー ---------- */
+.hdr{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px min(5vw,32px);transition:background .4s ease,box-shadow .4s ease;
+}
+.hdr.is-solid{background:rgba(253,249,242,.94);box-shadow:0 1px 0 var(--line);backdrop-filter:blur(8px)}
+.hdr__logo{display:flex;align-items:center;gap:10px;font-family:var(--mincho);font-weight:700;font-size:17px;letter-spacing:.16em;color:#fff;transition:color .4s ease;text-decoration:none}
+.hdr__logo img{height:30px;width:auto}
+.hdr__logo .lg--light{display:block}
+.hdr__logo .lg--dark{display:none}
+.hdr.is-solid .hdr__logo,.hdr--sub .hdr__logo{color:var(--sea-deep)}
+.hdr.is-solid .hdr__logo .lg--light,.hdr--sub .hdr__logo .lg--light{display:none}
+.hdr.is-solid .hdr__logo .lg--dark,.hdr--sub .hdr__logo .lg--dark{display:block}
+.hdr__nav{display:none;gap:26px;font-size:13px;letter-spacing:.1em}
+.hdr__nav a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s,color .4s}
+.hdr__nav a:hover{opacity:1}
+.hdr.is-solid .hdr__nav a,.hdr--sub .hdr__nav a{color:var(--sumi)}
+@media(min-width:900px){.hdr__nav{display:flex}}
+.hdr--sub{background:rgba(253,249,242,.94);box-shadow:0 1px 0 var(--line);backdrop-filter:blur(8px)}
+
+/* ---------- 椰子の葉の装飾 ---------- */
+.palm{position:absolute;pointer-events:none;opacity:.13;z-index:1}
+.palm--tl{top:-30px;left:-70px;width:280px;transform:rotate(12deg)}
+.palm--br{bottom:-50px;right:-80px;width:340px;transform:rotate(-160deg)}
+.palm--sec{top:20px;right:-60px;width:190px;opacity:.07;transform:rotate(-24deg)}
+@media(max-width:720px){.palm--tl{width:180px;left:-60px}.palm--br{width:210px;right:-70px}.palm--sec{display:none}}
+
+/* ---------- セクション共通 ---------- */
+.sec{padding:96px 0;position:relative;overflow:hidden}
+.sec--tight{padding-top:0}
+.sec--dark{background:var(--sea-deep);color:#fff}
+.sec--sea{background:linear-gradient(165deg,var(--sea) 0%,var(--sea-deep) 100%);color:#fff}
+.eyebrow{font-size:11px;letter-spacing:.24em;color:var(--sea);display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--line)}
+.sec--dark .eyebrow,.sec--sea .eyebrow{color:var(--sun)}
+.sec--dark .eyebrow::after,.sec--sea .eyebrow::after{background:rgba(255,255,255,.22)}
+.h2{font-family:var(--mincho);font-weight:700;font-size:clamp(24px,4.6vw,34px);line-height:1.6;letter-spacing:.06em;margin-bottom:28px}
+.h3{font-family:var(--mincho);font-weight:700;font-size:clamp(18px,3vw,22px);letter-spacing:.05em;margin-bottom:16px}
+.lead{max-width:44em;color:var(--gray);font-size:15.5px}
+.sec--dark .lead,.sec--sea .lead{color:rgba(255,255,255,.8)}
+.note{font-size:12.5px;color:var(--gray);line-height:1.8;margin-top:24px}
+.sec--dark .note,.sec--sea .note{color:rgba(255,255,255,.58)}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal.is-in{opacity:1;transform:none}
+
+/* ---------- 数字 ---------- */
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.18);position:relative;z-index:2}
+.stats__cell{background:var(--sea-deep);padding:28px 20px}
+.stats__num{font-family:var(--mincho);font-size:clamp(28px,6.4vw,42px);color:var(--sun);line-height:1.2;letter-spacing:.02em}
+.stats__num em{font-style:normal;font-size:.48em;margin-left:3px}
+.stats__label{font-size:12px;letter-spacing:.1em;color:rgba(255,255,255,.72);margin-top:8px}
+@media(min-width:760px){.stats{grid-template-columns:repeat(4,1fr)}}
+
+/* ---------- 事業 ---------- */
+.biz{border-top:1px solid var(--line);position:relative;z-index:2}
+.biz__item{border-bottom:1px solid var(--line);padding:36px 0;display:grid;gap:14px}
+.biz__tag{font-size:11px;letter-spacing:.18em;color:#fff;background:var(--sea);border-radius:2px;padding:4px 12px;justify-self:start}
+.biz__item:nth-child(2) .biz__tag{background:var(--palm)}
+.biz__item:nth-child(3) .biz__tag{background:var(--hibiscus)}
+.biz__item:nth-child(4) .biz__tag{background:var(--sun);color:var(--sea-deep)}
+.biz__name{font-family:var(--mincho);font-size:clamp(20px,3.6vw,26px);font-weight:700;letter-spacing:.04em}
+.biz__name small{display:block;font-family:var(--gothic);font-size:12px;letter-spacing:.14em;color:var(--gray);font-weight:400;margin-top:6px}
+.biz__desc{color:var(--gray);font-size:15px;max-width:40em}
+.biz__link{font-size:13px;letter-spacing:.1em;color:var(--sea);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px;justify-self:start}
+.biz__link:hover{color:var(--hibiscus)}
+@media(min-width:900px){
+  .biz__item{grid-template-columns:190px 1fr;align-items:start;column-gap:40px;padding:44px 0}
+  .biz__tag{grid-row:span 5}
+}
+
+/* ---------- 実績カード ---------- */
+.cases{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);position:relative;z-index:2}
+.case{background:var(--sand);padding:30px 26px;display:flex;flex-direction:column;gap:10px}
+.sec--dark .cases,.sec--sea .cases{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.18)}
+.sec--dark .case,.sec--sea .case{background:var(--sea-deep)}
+.case__field{font-size:11px;letter-spacing:.16em;color:var(--sea)}
+.sec--dark .case__field,.sec--sea .case__field{color:var(--sun)}
+.case__result{font-family:var(--mincho);font-size:clamp(21px,3.4vw,26px);line-height:1.45;letter-spacing:.02em}
+.case__result b{color:var(--hibiscus);font-weight:700}
+.sec--dark .case__result b,.sec--sea .case__result b{color:var(--sun)}
+.case__desc{font-size:14px;color:var(--gray);line-height:1.85}
+.sec--dark .case__desc,.sec--sea .case__desc{color:rgba(255,255,255,.72)}
+@media(min-width:720px){.cases{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.cases--3{grid-template-columns:repeat(3,1fr)}}
+
+/* ---------- メディア・活動 ---------- */
+.media{display:grid;border-top:1px solid var(--line);position:relative;z-index:2}
+.media__row{display:grid;gap:4px;padding:18px 0;border-bottom:1px solid var(--line)}
+.media__date{font-size:12px;letter-spacing:.12em;color:var(--sea)}
+.media__title{font-size:15px}
+.media__title span{color:var(--gray);font-size:13.5px}
+@media(min-width:720px){.media__row{grid-template-columns:150px 1fr;gap:24px;align-items:baseline}}
+
+/* ---------- 沿革 ---------- */
+.hist{border-left:1px solid var(--line);margin-left:6px;position:relative;z-index:2}
+.hist__item{position:relative;padding:0 0 30px 28px}
+.hist__item::before{content:"";position:absolute;left:-4px;top:12px;width:7px;height:7px;border-radius:50%;background:var(--sun)}
+.hist__year{font-family:var(--mincho);font-size:15px;letter-spacing:.1em;color:var(--sea)}
+.hist__text{font-size:15px;color:var(--sumi)}
+
+/* ---------- SNSアカウント ---------- */
+.accounts{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);position:relative;z-index:2}
+.account{background:var(--sand);padding:24px;text-decoration:none;display:grid;grid-template-columns:64px 1fr;gap:16px;align-items:start;transition:background .25s ease}
+.account:hover{background:#fff}
+.account__ava{width:64px;height:64px;border-radius:50%;object-fit:cover;background:linear-gradient(140deg,var(--sea-bright),var(--sea));display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--mincho);font-size:22px;letter-spacing:0;flex:none;overflow:hidden}
+.account__body{display:flex;flex-direction:column;gap:4px;min-width:0}
+.account__plat{font-size:11px;letter-spacing:.16em;color:var(--sea)}
+.account__name{font-family:var(--mincho);font-size:17px;letter-spacing:.03em;line-height:1.5}
+.account__handle{font-size:13px;color:var(--gray);letter-spacing:.04em}
+.account__desc{font-size:13.5px;color:var(--gray);line-height:1.8;margin-top:4px}
+@media(min-width:720px){.accounts{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- 代表挨拶 ---------- */
+.msg{display:grid;gap:32px;position:relative;z-index:2}
+.msg__photo{aspect-ratio:4/5;background:linear-gradient(140deg,#dce9e6,#c3d8d4);display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:12px;letter-spacing:.14em}
+.msg__body p{margin-bottom:1.2em;font-size:15.5px}
+.msg__sign{font-family:var(--mincho);font-size:19px;letter-spacing:.1em;margin-top:24px}
+.msg__sign small{display:block;font-family:var(--gothic);font-size:12px;letter-spacing:.14em;color:var(--gray);margin-bottom:4px}
+@media(min-width:900px){.msg{grid-template-columns:320px 1fr;gap:56px;align-items:start}}
+
+/* ---------- 表 ---------- */
+.table{width:100%;border-collapse:collapse;font-size:15px;position:relative;z-index:2}
+.table th,.table td{border-bottom:1px solid var(--line);padding:16px 4px;text-align:left;vertical-align:top}
+.table th{width:110px;font-weight:500;color:var(--gray);font-size:13.5px;letter-spacing:.08em}
+@media(min-width:720px){.table th{width:180px}}
+
+/* ---------- CTA ---------- */
+.cta{background:linear-gradient(160deg,var(--sea) 0%,var(--sea-deep) 70%);color:#fff;padding:88px 0;text-align:center;position:relative;overflow:hidden}
+.cta__title{font-family:var(--mincho);font-size:clamp(22px,4.6vw,32px);letter-spacing:.08em;margin-bottom:14px}
+.cta__text{color:rgba(255,255,255,.8);font-size:15px;margin-bottom:36px}
+.btn{display:inline-block;text-decoration:none;background:var(--sun);color:var(--sea-deep);font-weight:700;padding:16px 44px;letter-spacing:.12em;font-size:15px;border-radius:2px;transition:transform .2s ease,box-shadow .2s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(246,178,60,.3)}
+.btn--ghost{background:transparent;color:var(--sun);border:1px solid var(--sun)}
+.cta__sub{margin-top:24px;font-size:13px;color:rgba(255,255,255,.65);letter-spacing:.06em}
+.cta__sub a{color:var(--sun)}
+
+/* ---------- フッター ---------- */
+.ftr{background:#04303C;color:rgba(255,255,255,.6);padding:40px 0;font-size:12.5px;letter-spacing:.08em}
+.ftr__inner{display:flex;flex-direction:column;gap:16px}
+.ftr__logo{height:26px;width:auto;margin-bottom:10px;opacity:.9}
+.ftr__links{display:flex;gap:20px;flex-wrap:wrap}
+.ftr__links a{text-decoration:none;color:rgba(255,255,255,.78)}
+.ftr__links a:hover{color:var(--sun)}
+@media(min-width:720px){.ftr__inner{flex-direction:row;justify-content:space-between;align-items:center}}
+
+:focus-visible{outline:2px solid var(--sun);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+
+/* ---------- 写真プレースホルダ共通 ---------- */
+.ph{
+  position:relative;width:100%;background:linear-gradient(140deg,#DDEAE7,#BFD6D3);
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  color:#5C7C79;font-size:12px;letter-spacing:.1em;line-height:1.8;padding:12px;
+}
+.ph::after{
+  content:"";position:absolute;inset:8px;border:1px dashed rgba(92,124,121,.45);
+}
+.ph span{position:relative;z-index:1}
+
+/* ---------- 事業ブロックの写真 ---------- */
+.biz__photo{width:100%;aspect-ratio:4/3;object-fit:cover;order:-1}
+@media(min-width:900px){
+  .biz__item{grid-template-columns:170px 1fr 300px;column-gap:36px}
+  .biz__tag{grid-row:span 6}
+  .biz__photo{grid-column:3;grid-row:1 / span 6;order:0;aspect-ratio:3/4;align-self:start}
+}
+
+/* ---------- 活動風景ギャラリー ---------- */
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;position:relative;z-index:2}
+.gallery figure{margin:0}
+.gallery img,.gallery .ph{width:100%;aspect-ratio:4/3;object-fit:cover}
+.gallery figcaption{font-size:12px;color:var(--gray);margin-top:8px;letter-spacing:.06em}
+.gallery--wide figure:first-child{grid-column:span 2}
+@media(min-width:760px){
+  .gallery{grid-template-columns:repeat(3,1fr);gap:14px}
+  .gallery--wide figure:first-child{grid-column:span 2;grid-row:span 2}
+  .gallery--wide figure:first-child .ph,.gallery--wide figure:first-child img{aspect-ratio:auto;height:100%;min-height:300px}
+}
+
+/* ---------- ヒーロー背景写真（任意） ---------- */
+.hero__bg{position:absolute;inset:0;object-fit:cover;width:100%;height:100%;opacity:.42;z-index:0}
+
+/* ---------- 実績カードのスクリーンショット ---------- */
+.case__shot{
+  width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top center;
+  border:1px solid var(--line);background:#fff;margin-bottom:4px;
+}
+.sec--dark .case__shot,.sec--sea .case__shot{border-color:rgba(255,255,255,.2)}
+
+/* ---------- 事業ブロックに複数の画像を積む ---------- */
+.biz__photos{display:grid;gap:10px;order:-1}
+.biz__photos img{width:100%;display:block}
+.biz__photos .shot{aspect-ratio:16/10;object-fit:cover;object-position:top center;border:1px solid var(--line)}
+.biz__photos .logo{background:#fff;border:1px solid var(--line);padding:16px 18px;object-fit:contain;aspect-ratio:16/6}
+@media(min-width:900px){
+  .biz__photos{grid-column:3;grid-row:1 / span 6;order:0;align-self:start}
+}
+
+/* ---------- ヘッダーのお問い合わせボタン ---------- */
+.hdr{gap:16px}
+.hdr__cta{
+  display:inline-block;text-decoration:none;flex:none;
+  background:var(--sea-deep);color:#fff;font-weight:700;
+  font-size:13px;letter-spacing:.1em;padding:12px 22px;border-radius:2px;
+  transition:background .25s ease;
+}
+.hdr__cta:hover{background:var(--hi,var(--sun));color:var(--sea-deep)}
+.hdr:not(.is-solid):not(.hdr--sub) .hdr__cta{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.55);backdrop-filter:blur(4px)}
+.hdr:not(.is-solid):not(.hdr--sub) .hdr__cta:hover{background:#fff;color:var(--sea-deep)}
+@media(max-width:899px){
+  .hdr__cta{margin-left:auto;padding:10px 16px;font-size:12px}
+}
+
+/* ---------- 追従ヘッダー：スクロールしたらすぐ不透明に ---------- */
+.hdr{transition:background .3s ease, box-shadow .3s ease, padding .3s ease}
+.hdr.is-solid{padding-top:10px;padding-bottom:10px;box-shadow:0 2px 14px rgba(6,60,75,.10)}
+
+/* ---------- モバイルメニュー ---------- */
+.hdr__burger{
+  display:flex;flex-direction:column;justify-content:center;gap:5px;
+  width:40px;height:40px;border:0;background:transparent;cursor:pointer;padding:8px;flex:none;
+}
+.hdr__burger span{display:block;height:2px;background:#fff;transition:transform .3s ease,opacity .2s ease}
+.hdr.is-solid .hdr__burger span,.hdr--sub .hdr__burger span{background:var(--sea-deep)}
+.hdr.is-open .hdr__burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hdr.is-open .hdr__burger span:nth-child(2){opacity:0}
+.hdr.is-open .hdr__burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(min-width:900px){.hdr__burger{display:none}}
+
+@media(max-width:899px){
+  .hdr__nav{
+    position:fixed;top:0;left:0;right:0;bottom:0;
+    background:var(--sea-deep);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;
+    opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;z-index:-1;
+  }
+  .hdr.is-open .hdr__nav{opacity:1;visibility:visible;z-index:1}
+  .hdr__nav a,.hdr.is-solid .hdr__nav a,.hdr--sub .hdr__nav a{
+    color:#fff;font-family:var(--mincho);font-size:19px;letter-spacing:.12em;
+    padding:16px 0;opacity:1;
+  }
+  .hdr.is-open .hdr__cta{position:relative;z-index:2;background:var(--sun);color:var(--sea-deep);border-color:var(--sun)}
+  .hdr.is-open .hdr__burger span{background:#fff}
+}
+
+/* ロゴ画像が入るまでの社名テキスト */
+.hdr__logotext{font-family:var(--mincho);font-weight:700;font-size:17px;letter-spacing:.16em}

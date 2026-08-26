@@ -156,6 +156,7 @@ img{max-width:100%;display:block}
 /* ---------- 代表挨拶 ---------- */
 .msg{display:grid;gap:32px;position:relative;z-index:2}
 .msg__photo{aspect-ratio:4/5;background:linear-gradient(140deg,#dce9e6,#c3d8d4);display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:12px;letter-spacing:.14em}
+img.msg__photo{width:100%;object-fit:cover;object-position:center}
 .msg__body p{margin-bottom:1.2em;font-size:15.5px}
 .msg__sign{font-family:var(--mincho);font-size:19px;letter-spacing:.1em;margin-top:24px}
 .msg__sign small{display:block;font-family:var(--gothic);font-size:12px;letter-spacing:.14em;color:var(--gray);margin-bottom:4px}

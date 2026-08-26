@@ -203,7 +203,7 @@ img{max-width:100%;display:block}
 /* ---------- 活動風景ギャラリー ---------- */
 .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;position:relative;z-index:2}
 .gallery figure{margin:0}
-.gallery img,.gallery .ph{width:100%;height:auto;object-fit:contain}
+.gallery img,.gallery .ph{width:100%;aspect-ratio:4/3;object-fit:cover}
 .gallery figcaption{font-size:12px;color:var(--gray);margin-top:8px;letter-spacing:.06em}
 .gallery--wide figure:first-child{grid-column:span 2}
 @media(min-width:760px){
@@ -280,3 +280,52 @@ img{max-width:100%;display:block}
 
 /* ロゴ画像が入るまでの社名テキスト */
 .hdr__logotext{font-family:var(--mincho);font-weight:700;font-size:17px;letter-spacing:.16em}
+
+/* ---------- 数字の内訳 ---------- */
+.breakdown{margin-top:28px;position:relative;z-index:2}
+.breakdown__ttl{font-size:12px;letter-spacing:.16em;color:var(--sun);margin-bottom:12px}
+.breakdown__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16)}
+.breakdown__cell{background:var(--sea-deep);padding:16px 18px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.breakdown__name{font-size:13px;color:rgba(255,255,255,.85);line-height:1.5}
+.breakdown__name small{display:block;font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.04em}
+.breakdown__num{font-family:var(--mincho);font-size:19px;color:#fff;white-space:nowrap}
+@media(min-width:900px){.breakdown__grid{grid-template-columns:repeat(4,1fr)}}
+
+/* ---------- 対談動画（サムネ付き） ---------- */
+.videos{display:grid;gap:16px}
+.videos a{
+  display:grid;grid-template-columns:132px 1fr;gap:14px;align-items:center;
+  text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:16px;
+}
+.sec--dark .videos a,.sec--sea .videos a{border-color:rgba(255,255,255,.2)}
+.videos__thumb{
+  width:132px;aspect-ratio:16/9;object-fit:cover;border-radius:2px;
+  background:rgba(255,255,255,.1);
+}
+.videos__thumb--none{
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;letter-spacing:.1em;color:rgba(255,255,255,.6);
+  border:1px solid rgba(255,255,255,.25);
+}
+.videos__body{display:flex;flex-direction:column;gap:4px;min-width:0}
+.videos__tag{font-size:10px;letter-spacing:.16em;color:var(--sun)}
+.videos__ttl{font-size:14.5px;line-height:1.6;transition:color .2s}
+.videos a:hover .videos__ttl{color:var(--sun)}
+@media(min-width:760px){
+  .videos{grid-template-columns:repeat(2,1fr);gap:20px}
+  .videos__thumb{width:150px}
+  .videos a{grid-template-columns:150px 1fr}
+}
+
+/* ---------- 実績カード（動画つき） ---------- */
+a.case{text-decoration:none;transition:background .25s ease}
+.sec--dark a.case:hover,.sec--sea a.case:hover{background:#0b4c5c}
+.case__thumb{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:2px;margin-bottom:4px}
+.case__play{
+  display:inline-flex;align-items:center;gap:6px;margin-top:auto;padding-top:6px;
+  font-size:12px;letter-spacing:.08em;color:var(--sun);
+}
+.case__play::before{
+  content:"";width:0;height:0;border-left:8px solid var(--sun);
+  border-top:5px solid transparent;border-bottom:5px solid transparent;
+}

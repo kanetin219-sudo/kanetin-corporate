@@ -90,6 +90,8 @@ img{max-width:100%;display:block}
 .biz__item:nth-child(2) .biz__tag{background:var(--palm)}
 .biz__item:nth-child(3) .biz__tag{background:var(--hibiscus)}
 .biz__item:nth-child(4) .biz__tag{background:var(--sun);color:var(--sea-deep)}
+.biz__item:nth-child(5) .biz__tag{background:var(--sea-deep)}
+.biz__item:nth-child(6) .biz__tag{background:var(--sea-bright);color:var(--sea-deep)}
 .biz__name{font-family:var(--mincho);font-size:clamp(20px,3.6vw,26px);font-weight:700;letter-spacing:.04em}
 .biz__name small{display:block;font-family:var(--gothic);font-size:12px;letter-spacing:.14em;color:var(--gray);font-weight:400;margin-top:6px}
 .biz__desc{color:var(--gray);font-size:15px;max-width:40em}
@@ -141,6 +143,12 @@ img{max-width:100%;display:block}
 .account__handle{font-size:13px;color:var(--gray);letter-spacing:.04em}
 .account__desc{font-size:13.5px;color:var(--gray);line-height:1.8;margin-top:4px}
 @media(min-width:720px){.accounts{grid-template-columns:repeat(2,1fr)}}
+.sec--dark .accounts,.sec--sea .accounts{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.18)}
+.sec--dark .account,.sec--sea .account{background:var(--sea-deep)}
+.sec--dark .account:hover,.sec--sea .account:hover{background:#0b4c5c}
+.sec--dark .account__plat,.sec--sea .account__plat{color:var(--sun)}
+.sec--dark .account__handle,.sec--sea .account__handle,
+.sec--dark .account__desc,.sec--sea .account__desc{color:rgba(255,255,255,.72)}
 
 /* ---------- 代表挨拶 ---------- */
 .msg{display:grid;gap:32px;position:relative;z-index:2}
@@ -198,6 +206,7 @@ img{max-width:100%;display:block}
   .biz__item{grid-template-columns:170px 1fr 300px;column-gap:36px}
   .biz__tag{grid-row:span 6}
   .biz__photo{grid-column:3;grid-row:1 / span 6;order:0;aspect-ratio:3/4;align-self:start}
+  .biz__item--nophoto{grid-template-columns:170px 1fr}
 }
 
 /* ---------- 活動風景ギャラリー ---------- */

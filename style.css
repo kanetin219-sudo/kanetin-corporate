@@ -241,6 +241,7 @@ img.msg__photo{width:100%;object-fit:cover;object-position:center}
 .biz__photos img{width:100%;display:block}
 .biz__photos .shot{aspect-ratio:16/10;object-fit:cover;object-position:top center;border:1px solid var(--line)}
 .biz__photos .logo{background:#fff;border:1px solid var(--line);padding:16px 18px;object-fit:contain;aspect-ratio:16/6}
+.biz__note{font-size:11px;color:var(--gray);line-height:1.6;letter-spacing:.04em}
 @media(min-width:900px){
   .biz__photos{grid-column:3;grid-row:1 / span 6;order:0;align-self:start}
 }

@@ -212,6 +212,7 @@ img.msg__photo{width:100%;object-fit:cover;object-position:center}
   .biz__photo{grid-column:3;grid-row:1 / span 6;order:0;aspect-ratio:3/4;align-self:start}
   .biz__item--nophoto{grid-template-columns:170px 1fr}
 }
+.biz__photo--auto{aspect-ratio:auto;height:auto;object-fit:contain}
 
 /* ---------- 活動風景ギャラリー ---------- */
 .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;position:relative;z-index:2}

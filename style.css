@@ -137,6 +137,7 @@ img{max-width:100%;display:block}
 .accounts{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);position:relative;z-index:2}
 .account{background:var(--sand);padding:24px;text-decoration:none;display:grid;grid-template-columns:64px 1fr;gap:16px;align-items:start;transition:background .25s ease}
 .account:has(.account__shot){grid-template-columns:1fr;gap:18px}
+.account:not(:has(img)){grid-template-columns:1fr}
 .account__shot{width:100%;height:auto;border:1px solid var(--line);background:#fff}
 .sec--dark .account__shot,.sec--sea .account__shot{border-color:rgba(255,255,255,.2)}
 .account:hover{background:#fff}

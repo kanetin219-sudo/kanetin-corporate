@@ -36,7 +36,8 @@ img{max-width:100%;display:block}
 }
 .hdr.is-solid{background:rgba(253,249,242,.94);box-shadow:0 1px 0 var(--line);backdrop-filter:blur(8px)}
 .hdr__logo{display:flex;align-items:center;gap:10px;font-family:var(--mincho);font-weight:700;font-size:17px;letter-spacing:.16em;color:#fff;transition:color .4s ease;text-decoration:none}
-.hdr__logo img{height:30px;width:auto}
+.hdr__logo img{height:52px;width:auto}
+@media(max-width:720px){.hdr__logo img{height:40px}}
 .hdr__logo .lg--light{display:block}
 .hdr__logo .lg--dark{display:none}
 .hdr.is-solid .hdr__logo,.hdr--sub .hdr__logo{color:var(--sea-deep)}

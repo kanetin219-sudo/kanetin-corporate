@@ -621,8 +621,57 @@
     <p class="cta__text">
       SNS運用のご相談、事業所の見学、取材や協業のお問い合わせまで。<br>内容が固まっていない段階でも構いません。
     </p>
-    <!-- 要記入：Googleフォーム等のURLに差し替え -->
-    <a class="btn" href="#">お問い合わせフォームへ</a>
+    <form class="form" action="https://formsubmit.co/kanetin229@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="【かねちんサイト】お問い合わせ">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://kanetin219-sudo.github.io/kanetin-corporate/thanks.html">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+      <div class="form__row">
+        <label class="form__label" for="f-name">お名前 <span class="form__req">必須</span></label>
+        <input class="form__input" id="f-name" type="text" name="お名前" required autocomplete="name">
+      </div>
+
+      <div class="form__row">
+        <label class="form__label" for="f-company">会社名・事業所名</label>
+        <input class="form__input" id="f-company" type="text" name="会社名" autocomplete="organization">
+      </div>
+
+      <div class="form__row">
+        <label class="form__label" for="f-email">メールアドレス <span class="form__req">必須</span></label>
+        <input class="form__input" id="f-email" type="email" name="email" required autocomplete="email">
+      </div>
+
+      <div class="form__row">
+        <label class="form__label" for="f-tel">電話番号</label>
+        <input class="form__input" id="f-tel" type="tel" name="電話番号" autocomplete="tel">
+      </div>
+
+      <div class="form__row">
+        <label class="form__label" for="f-type">ご用件</label>
+        <select class="form__input" id="f-type" name="ご用件">
+          <option>SNS運用・広告のご相談</option>
+          <option>MEO対策のご相談</option>
+          <option>AI内製化支援のご相談</option>
+          <option>就労継続支援B型（アネラカフェ大分）の見学・利用</option>
+          <option>オンラインスクール「Lゼロ」について</option>
+          <option>取材・メディア掲載のご依頼</option>
+          <option>協業・その他</option>
+        </select>
+      </div>
+
+      <div class="form__row">
+        <label class="form__label" for="f-body">お問い合わせ内容 <span class="form__req">必須</span></label>
+        <textarea class="form__input form__input--area" id="f-body" name="お問い合わせ内容" rows="6" required></textarea>
+      </div>
+
+      <p class="form__note">
+        ご入力いただいた内容は、お問い合わせへの回答のみに利用します。詳しくは<a href="./privacy.html">プライバシーポリシー</a>をご確認ください。
+      </p>
+
+      <button class="btn" type="submit">この内容で送信する</button>
+    </form>
     <p class="cta__sub">
       お急ぎの方はお電話でも：<a href="tel:0000000000">【要記入：電話番号】</a>（平日 9:00–18:00）
     </p>

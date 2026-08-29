@@ -125,6 +125,8 @@ img{max-width:100%;display:block}
 .media__date{font-size:12px;letter-spacing:.12em;color:var(--sea)}
 .media__title{font-size:15px}
 .media__title span{color:var(--gray);font-size:13.5px}
+.media__title a{color:var(--sea);text-decoration:none;border-bottom:1px solid currentColor}
+.media__title a:hover{color:var(--hibiscus)}
 @media(min-width:720px){.media__row{grid-template-columns:150px 1fr;gap:24px;align-items:baseline}}
 
 /* ---------- 沿革 ---------- */

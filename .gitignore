@@ -1,3 +1,12 @@
 .DS_Store
 preview/
 *.zip
+
+# セキュリティ棚卸し 2026-09-14
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*
+service-account*.json
